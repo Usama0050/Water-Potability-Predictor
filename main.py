@@ -2,9 +2,9 @@ import pickle
 import joblib
 import streamlit as st
 import numpy as np
-
-with open('model_rfc.pkl', 'rb') as file:
-    model = joblib.load('model_rfc.pkl')
+#used Random Forest Classifier
+with open('model.pkl', 'rb') as file:
+    model = joblib.load('model.pkl')
     
 # Streamlit app
 st.title("Water Potability Predictor")
