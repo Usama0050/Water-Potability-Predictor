@@ -3,26 +3,6 @@ import joblib
 import streamlit as st
 import numpy as np
 
-def set_background(image_file):
-    with open(image_file, "rb") as img_file:
-        b64_image = base64.b64encode(img_file.read()).decode()
-
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/png;base64,{b64_image}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-import base64
-set_background("background.png")  # or the image filename you renamed
-
 #used Random Forest Classifier
 with open('model.pkl', 'rb') as file:
     model = joblib.load('model.pkl')
